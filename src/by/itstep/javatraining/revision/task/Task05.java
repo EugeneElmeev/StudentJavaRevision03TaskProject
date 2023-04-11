@@ -23,6 +23,11 @@ package by.itstep.javatraining.revision.task;
 
 public class Task05 {
     public static boolean task05(int x1, int y1, int x2, int y2) {
+        if (x1 > 0 && y1 > 0 && x1 < 9 && y1 < 9 && x2 > 0 && y2 > 0 && x2 < 9 && y2 < 9
+                && x1 != x2 && y1 != y2) {
+            return (x1 - y1 == x2 - y2) ||// move right diagonal
+                    (x1 + y1 == x2 + y2); // move left diagonal
+        }
         return false;
     }
 }

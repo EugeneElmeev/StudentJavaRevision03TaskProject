@@ -23,14 +23,13 @@ package by.itstep.javatraining.revision.task;
 
 public class Task03 {
     public static boolean task03(int x1, int y1, int x2, int y2) {
-        boolean result = false;
-        if (x1 <= 0 || y1 <= 0 || x1 > 8 || y1 > 8 || x2 <= 0 || y2 <= 0 || x2 > 8 || y2 > 8
-                || x1 == x2 && y1 == y2 || x1 != x2 && y1 != y2) {
-            return result;
+        if (x1 > 0 && y1 > 0 && x1 < 9 && y1 < 9 && x2 > 0 && y2 > 0 && x2 < 9 && y2 < 9) {
+            return (x1 == x2 && y1 < y2) || // move vertically forward
+                    (x1 == x2 && y1 > y2) || // move vertically back
+                    (x1 > x2 && y1 == y2) || // move horizontally left
+                    (x1 < x2 && y1 == y2); // move horizontally right
         }
-        if (x1 == x2 && y1 < y2 || x1 == x2 && y1 > y2 || x1 > x2 && y1 == y2 || x1 < x2 && y1 == y2) {
-            result = true;
-        }
-        return result;
+        return false;
     }
 }
+

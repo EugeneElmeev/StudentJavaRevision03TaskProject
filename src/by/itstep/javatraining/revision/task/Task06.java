@@ -24,6 +24,17 @@ package by.itstep.javatraining.revision.task;
 
 public class Task06 {
     public static boolean task06(int x1, int y1, int x2, int y2) {
+        if (x1 > 0 && y1 > 0 && x1 < 9 && y1 < 9 && x2 > 0 && y2 > 0 && x2 < 9 && y2 < 9
+                && x1 != x2 && y1 != y2) {
+            return (x1 - x2 == -2 && y1 - y2 == -1) ||  // move 1st right 2nd up
+                    (x1 - x2 == -2 && y1 - y2 == 1) ||  // move 1st right 2nd down
+                    (x1 - x2 == -1 && y1 - y2 == -2) || // move 1st up 2nd right
+                    (x1 - x2 == 1 && y1 - y2 == -2) ||  // move 1st up 2nd left
+                    (x1 - x2 == 2 && y1 - y2 == -1) ||  // move 1st left 2nd up
+                    (x1 - x2 == 2 && y1 - y2 == 1) ||   // move 1st left 2nd down
+                    (x1 - x2 == 1 && y1 - y2 == 2) ||   // move 1st down 2nd left
+                    (x1 - x2 == -1 && y1 - y2 == 2);    // move 1st down 2nd right
+        }
         return false;
     }
 }
